@@ -1,0 +1,31 @@
+<div>
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
+        <a routerLink='/line-item/create'>
+            <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+        </a>
+    </section>
+    <table class="table table-striped table-bordered table-hover table-sm">
+        <thead class="thead-dark">
+            <th scope="col">Invoice ID</th>
+            <th scope="col">Product</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let li of lis">
+                <td>{{li.invoiceId}}</td>
+                <td>{{li.product.description}}</td>
+                <td>{{li.quantity}}</td>
+                <td>
+                    <a routerLink='/line-item/detail/{{li.id}}'>
+                      <img width='20' height='20' src='assets/details.png' title='Line Item Details'>
+                    </a> |
+                    <a routerLink='/line-item/edit/{{li.id}}'>
+                      <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Line Item'>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

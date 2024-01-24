@@ -1,0 +1,26 @@
+<div *ngIf="product" class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span> | <a routerLink="/product/list">Return to List</a></span>
+    </section>
+    <main class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>Code</td>
+                <td>{{product.productCode}}</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input [(ngModel)]="product.description" class="rounded" type="text" [disabled]="true"></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input [(ngModel)]="product.price" class="rounded" type="number" [disabled]="true"></td>
+            </tr>
+         </table>
+    </main>
+    <span>
+        <span><a routerLink="/product/edit/{{product.productCode}}" class="btn btn-sm btn-warning">Edit</a></span>
+        <span> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
+    </span>
+  </div>

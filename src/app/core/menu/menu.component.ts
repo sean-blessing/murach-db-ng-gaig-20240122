@@ -15,8 +15,8 @@ export class MenuComponent {
 
   ngOnInit(): void {
     this.menuItems = [
-      new MenuItem("Product", "/product/list", "Product List")
-      //new MenuItem("Line Item List", "/li/list", "Line Item List")
+      new MenuItem("Product", "/product/list", "Product List"),
+      new MenuItem("Line Item List", "/line-item/list", "Line Item List")
     ];
   }
 }

@@ -18,7 +18,13 @@
                 <td>{{product.description}}</td>
                 <td>{{product.price | currency}}</td>
                 <td>
-                    Hold | Hold
+                    <a routerLink='/product/detail/{{product.productCode}}'>
+                        <img width='20' height='20' src='assets/details.png' title='Product Details'>
+                    </a> 
+                    |                     
+                    <a routerLink='/product/edit/{{product.productCode}}'>
+                        <img width='20' height='20' src='assets/pencil-icon.png' title='Edit Product'>
+                    </a>
                 </td>
             </tr>
         </tbody>

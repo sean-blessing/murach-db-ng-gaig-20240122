@@ -1,0 +1,30 @@
+<div *ngIf="lineItem" class="component">
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">{{title}}</span>
+        <span> | <a routerLink="/line-item/list">Return to List</a></span>
+    </section>
+    <main class="single">
+        <table class="table table-sm">
+            <tr>
+                <td>ID</td>
+                <td>{{lineItem.id}}</td>
+            </tr>
+            <tr>
+                <td>InvoiceId:</td>
+                <td><input [(ngModel)]="lineItem.invoiceId" class="rounded" type="number" [disabled]="true"></td>
+            </tr>
+            <tr>
+                <td>Product:</td>
+                <td><input [(ngModel)]="lineItem.product.productCode" class="rounded" type="text" [disabled]="true"></td>
+            </tr>
+            <tr>
+                <td>Quantity:</td>
+                <td><input [(ngModel)]="lineItem.quantity" class="rounded" type="number" [disabled]="true"></td>
+            </tr>
+         </table>
+    </main>
+    <span>
+        <span><a routerLink="/line-item/edit/{{lineItem.id}}" class="btn btn-sm btn-warning">Edit</a></span>
+        <span> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
+    </span>
+  </div>

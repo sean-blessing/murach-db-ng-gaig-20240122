@@ -25,4 +25,12 @@ export class ProductService {
   create(product: Product): Observable<Product> {
     return this.http.post(URL + '/', product) as Observable<Product>;
   }
+
+  delete(code: string): Observable<Product> {
+    return this.http.delete(URL + "/" + code) as Observable<Product>;
+  }
+
+  edit(product: Product): Observable<Product> {
+    return this.http.put(URL + '/', product) as Observable<Product>;
+  }
 }
