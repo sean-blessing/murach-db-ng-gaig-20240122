@@ -1,0 +1,36 @@
+<div>
+    <span class='component-title'>[{{title}}]</span>
+    <p *ngIf='!newProduct'>Loading...</p>
+    <div *ngIf='newProduct'>
+    <main class="single">
+        <table class="table table-sm">
+        <tr>
+            <td>
+            Code:
+            </td>
+            <td>
+            <input [(ngModel)]="newProduct.productCode" class="rounded" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Description:
+            </td>
+            <td>
+            <input [(ngModel)]="newProduct.description" class="rounded" type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Price:
+            </td>
+            <td>
+            <input [(ngModel)]="newProduct.price" class="rounded" type="number">
+            </td>
+        </tr>
+        </table>
+    </main>
+    <span><button (click)="save()" class="btn btn-sm btn-primary">Save</button></span>
+    <p *ngIf="message">{{message}}</p>
+    </div>
+</div>

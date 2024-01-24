@@ -1,5 +1,26 @@
 <div>
     <section class="heading">
         <span class="page-title font-weight-bold font-italic">[{{title}}]</span>
+        <a routerLink='/product/create'>
+            <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
+        </a>
     </section>
+    <table class="table table-striped table-bordered table-hover table-sm">
+        <thead class="thead-dark">
+            <th scope="col">Code</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{product.productCode}}</td>
+                <td>{{product.description}}</td>
+                <td>{{product.price | currency}}</td>
+                <td>
+                    Hold | Hold
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
