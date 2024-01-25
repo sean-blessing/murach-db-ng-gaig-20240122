@@ -1,1 +1,38 @@
-<p>line-item-create works!</p>
+<div>
+    <span class='component-title'>[{{title}}]</span>
+    <p *ngIf='!products'>Loading...</p>
+    <div *ngIf='products'>
+    <main class="single">
+        <table class="table table-sm">
+        <tr>
+            <td>
+            Invoice ID:
+            </td>
+            <td>
+            <input [(ngModel)]="newLineItem.invoiceId" class="rounded" type="number">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Product:
+            </td>
+            <td>
+                <select [(ngModel)]="newLineItem.product" class="rounded">
+                    <option *ngFor="let product of products" [ngValue]='product'>{{product.productCode + " - " + product.description}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Quantity:
+            </td>
+            <td>
+            <input [(ngModel)]="newLineItem.quantity" class="rounded" type="number">
+            </td>
+        </tr>
+        </table>
+    </main>
+    <span><button (click)="save()" class="btn btn-sm btn-primary">Save</button></span>
+    <p *ngIf="message">{{message}}</p>
+    </div>
+</div>

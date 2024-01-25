@@ -1,1 +1,38 @@
-<p>line-item-edit works!</p>
+<div>
+    <span class='component-title'>[{{title}}]</span>
+    <p *ngIf='!products'>Loading...</p>
+    <div *ngIf='products'>
+    <main class="single">
+        <table class="table table-sm">
+        <tr>
+            <td>
+            Invoice ID:
+            </td>
+            <td>
+            <input [(ngModel)]="lineItem.invoiceId" class="rounded" type="number">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Product:
+            </td>
+            <td>
+                <select [(ngModel)]="lineItem.product" class="rounded" [compareWith]="compProduct">
+                    <option *ngFor="let product of products" [ngValue]='product'>{{product.productCode + " - " + product.description}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Quantity:
+            </td>
+            <td>
+            <input [(ngModel)]="lineItem.quantity" class="rounded" type="number">
+            </td>
+        </tr>
+        </table>
+    </main>
+    <span><button (click)="save()" class="btn btn-sm btn-primary">Save</button></span>
+    <p *ngIf="message">{{message}}</p>
+    </div>
+</div>
