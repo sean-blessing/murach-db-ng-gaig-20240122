@@ -12,6 +12,9 @@ export class ProductListComponent implements OnInit, OnDestroy{
   title: string = "Product-List";
   products: Product[] = [];
   subscription!: Subscription;
+  // add sorting
+  sortCriteria: string = "productCode";
+  sortOrder: string = "asc";
 
   constructor(private productSvc: ProductService) {}
   
@@ -24,5 +27,12 @@ export class ProductListComponent implements OnInit, OnDestroy{
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  sortBy(column: string): void {
+    if(column == this.sortCriteria){
+      this.sortOrder = (this.sortOrder == "desc") ? "asc" : "desc";
+    }
+    this.sortCriteria = column;
   }
 }

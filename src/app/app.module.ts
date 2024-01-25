@@ -14,6 +14,7 @@ import { LineItemCreateComponent } from './feature/line-item/line-item-create/li
 import { LineItemDetailComponent } from './feature/line-item/line-item-detail/line-item-detail.component';
 import { LineItemListComponent } from './feature/line-item/line-item-list/line-item-list.component';
 import { LineItemEditComponent } from './feature/line-item/line-item-edit/line-item-edit.component';
+import { SortPipe } from './pipe/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LineItemEditComponent } from './feature/line-item/line-item-edit/line-i
     LineItemCreateComponent,
     LineItemDetailComponent,
     LineItemListComponent,
-    LineItemEditComponent
+    LineItemEditComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
